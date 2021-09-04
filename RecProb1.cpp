@@ -1,0 +1,30 @@
+//Check if an array is sorted or not
+
+#include<iostream>
+using namespace std;
+
+bool sorted(int arr[], int n){
+    if(n==1)
+    return true;
+
+    bool roa= sorted(arr+1, n-1);
+
+    return (arr[0]<arr[1] && roa);
+
+
+}
+
+
+
+int main(){
+  int n;
+  cin>>n ;
+  int arr[n];
+
+  for(int i=0; i<n; i++)
+  cin>>arr[i];
+
+  cout<<sorted(arr, n)<<endl;
+return 0;
+
+}
